@@ -1,8 +1,12 @@
 import fs from "fs/promises";
 import { nanoid } from "nanoid";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const contactsPath = path.join(process.cwd(), "db", "contacts.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const contactsPath = path.join(__dirname, "db", "contacts.json");
 
 const updateContacts = (data) =>
   fs.writeFile(contactsPath, JSON.stringify(data, null, 2));

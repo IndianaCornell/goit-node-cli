@@ -4,7 +4,7 @@ import {
   getContactById,
   listContacts,
   removeContact,
-} from "./contacts.js";
+} from "./src/contacts.js";
 
 program
   .option("-a, --action <type>", "choose action")
